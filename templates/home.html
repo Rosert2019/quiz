@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Entrenez-vous pour l'entretien de naturalisation.</h2>
+
+<form method='post' action='' >
+{% csrf_token %}
+{% for question  in questions%}
+<div class="form-group">
+    <label for="question">{{forloop.counter}}.{{question.question}}</label>
+  </div>
+<p>
+<div class="form-check">
+    <input
+      class="form-check-input"
+      type="radio"
+      name="{{question.question}}"
+      id="{{question.choose_1}}"
+      value="{{question.choose_1}}"
+
+    />
+    <label class="form-check-label" for="{{question.choose_1}}"> {{question.choose_1}}</label>
+ </div>
+  
+ <div class="form-check">
+    <input
+      class="form-check-input"
+      type="radio"
+      name="{{question.question}}"
+      id="{{question.choose_2}}"
+      value="{{question.choose_2}}"
+    />
+    <label class="form-check-label" for="{{question.choose_2}}"> {{question.choose_2}}</label>
+ </div>
+ 
+ <div class="form-check">
+    <input
+      class="form-check-input"
+      type="radio"
+      name="{{question.question}}"
+      id="{{question.choose_3}}"
+      value="{{question.choose_3}}"
+    />
+    <label class="form-check-label" for="{{question.choose_3}}"> {{question.choose_3}}</label>
+ </div>
+ 
+ <div class="form-check">
+    <input
+      class="form-check-input"
+      type="radio"
+      name="{{question.question}}"
+      id="{{question.choose_4}}"
+      value="{{question.choose_4}}"
+    />
+    <label class="form-check-label" for="{{question.choose_1}}"> {{question.choose_4}}</label>
+ </div>
+</p>
+<br>
+{% endfor %}
+<button type="submit" class="btn btn-primary">Envoyer</button>
+</form>
+
+{% endblock %}

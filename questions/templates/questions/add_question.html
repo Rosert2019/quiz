@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Uniquement l'admnistrateur à droit d'ajouter les questions. Merci.</h2>
+<form action="" method="POST">
+    {% csrf_token %}
+      {{form.as_p}}
+      <br>
+   <input type="submit" name="Submit">
+</form>
+
+<a href="{% url 'home' %}"> Cliquez ici pour faire un test.</a>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <table>
+        <tr>
+          <td>Score</td>
+          <td>Résultat</td>
+          <td>Nombre de fautes</td>
+        </tr>
+        <tr>
+          <td>{{test}}</td>
+          <td>{{mention}}</td>
+          <td>{{echec}}</td>
+        </tr>
+      </table>
+</div>
+
+<a href="{% url 'home' %}"> Faire une autre série</a>
+{% endblock %}
